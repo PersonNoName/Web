@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--使用mapper代理开发，第一步要将UserMapper.xml文件放在编译后与-->
+<mapper namespace="com.example.mapper.BrandMapper">
+    <resultMap id="brandResultMap" type="brand">
+        <result column="brand_name" property="brandName"/>
+        <result column="company_name" property="companyName"/>
+    </resultMap>
+    <select id="selectAll" resultMap="brandResultMap" resultType="brand">
+        select * from tb_brand
+    </select>
+
+    <insert id="add" parameterType="brand">
+        insert into tb_brand values(null,#{brandName},#{companyName},#{ordered},#{description},#{status})
+    </insert>
+
+    <select id="selectById" resultMap="brandResultMap" parameterType="int" resultType="brand">
+        select * from tb_brand where id = #{id}
+    </select>
+</mapper>

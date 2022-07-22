@@ -1,0 +1,94 @@
+body{
+	background: url("../image/background.jpeg") no-repeat center center fixed;
+
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#login_box {
+	width: 20%;
+	height: 400px;
+	background-color: #00000060;
+	margin: auto;
+	margin-top: 10%;
+	text-align: center;
+	border-radius: 10px;
+	padding: 50px 50px;
+}
+
+h2{
+	color: #ffffff90;
+	margin-top: 5%;
+}
+#errMsg{
+	text-align: center;
+	margin-top: 5px;
+	font-size: 5px;
+	color: #b94648;
+}
+#input-box{
+	margin-top: 5%;
+}
+
+span{
+	color: #fff;
+}
+
+input{
+	border: 0;
+	width: 60%;
+	font-size: 15px;
+	color: #fff;
+	background: transparent;
+	border-bottom: 2px solid #fff;
+	padding: 5px 10px;
+	outline: none;
+	margin-top: 10px;
+}
+.btn {
+	margin-top: 50px;
+	padding: 5px 10px;
+	width: 60%;
+	height: 35px;
+	border-radius: 10px;
+	border: 0;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+	font-size: 15px;
+	background-color: #ffffff90;
+}
+.btn:hover {
+	color: #FFFEFE;
+	background-color: #E1725E;
+}
+
+#sign_up {
+	margin-top: 45%;
+	margin-left: 60%;
+}
+
+a {
+	color: #b94648;
+}
+
+.msg{
+	text-align: center;
+	margin-top: 15px;
+	font-size: 5px;
+	color: #E1725E;
+}
+.check_box{
+	color: #E1725E;
+	font-size: 10px;
+	position:relative;
+	left:-55px;
+}
+
+#remember{
+	width:15px;
+	position: relative;
+	left:-55px;
+	top:3px;
+}

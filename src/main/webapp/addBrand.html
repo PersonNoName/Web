@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>添加品牌</h3>
+    <form action="" method="post">
+        品牌名称：<input id="brandName" name="brandName"><br>
+        企业名称：<input id="companyName" name="companyName"><br>
+        排序: <input id="ordered" name="ordered"><br>
+        描述信息：<textarea id="description" rows="5" cols="20" name="description"></textarea><br>
+        状态：
+        <input type="radio" name="status" value="0">禁用
+        <input type="radio" name="status" value="1">启用<br>
+
+        <input type="button" id="btn" value="提交">
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        document.getElementById("btn").onclick=function () {
+            var formData = {
+                brandName: "",
+                companyName: "",
+                ordered: "",
+                description: "",
+                status: "",
+            }
+            // 获取表单数据
+            let brandName = document.getElementById("brandName").value;
+            let companyName = document.getElementById("companyName").value;
+            let ordered = document.getElementById("ordered").value;
+            let description = document.getElementById("description").value;
+            let status = document.getElementsByName("status");
+            for (let i = 0; i < status.length; i++) {
+                if (status[i].checked) {
+                    formData.status = status[i].value;
+                }
+            }
+
+            formData.brandName = brandName;
+            formData.companyName = companyName;
+            formData.ordered = ordered;
+            formData.description = description;
+
+            // alert(formData.brandName);
+            // 点击按钮后发送请求
+            axios({
+                method: "post",
+                url: "http://localhost:8080/brand-demo/addServlet",
+                data: formData
+            }).then(function (resp){
+                console.log(resp.data);
+                if (resp.data == "Success"){
+                    location.href = "http://localhost:8080/brand-demo/brand.html";
+                }
+            }).catch(function (resp){
+                console.log("Hello");
+            })
+        }
+    </script>
+</body>
+</html>
